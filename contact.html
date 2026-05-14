@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CS Department — Contact</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-brand">CS <span>Dept.</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="faculty.html">Faculty</a></li>
+      <li><a href="admissions.html">Admissions</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" style="padding: 3rem 2rem;">
+    <h1>Contact Us</h1>
+    <p>Have a question? Reach out to the department — we're happy to help.</p>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Contact Info -->
+        <div>
+          <h2 class="section-title">Get In Touch</h2>
+          <div class="divider"></div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <h4>Office Location</h4>
+              <p>Department of Computer Science, Block-A, Room 301<br>COMSATS University Islamabad, Lahore Campus<br>Defence Road, Off Raiwind Road, Lahore</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">📞</div>
+            <div>
+              <h4>Phone</h4>
+              <p>+92-42-111-001-007 Ext. 812</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">📧</div>
+            <div>
+              <h4>Email</h4>
+              <p>cs.lahore@comsats.edu.pk</p>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-icon">🕐</div>
+            <div>
+              <h4>Office Hours</h4>
+              <p>Monday – Friday: 8:00 AM – 5:00 PM<br>Saturday: 9:00 AM – 1:00 PM<br>Sunday: Closed</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div>
+          <h2 class="section-title">Send a Message</h2>
+          <div class="divider"></div>
+
+          <div class="alert alert-info">
+            📬 We respond to all inquiries within 1–2 business days.
+          </div>
+
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Your full name" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="your@email.com" />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject">
+              <option value="">-- Select a topic --</option>
+              <option>Admissions Inquiry</option>
+              <option>Course Information</option>
+              <option>Faculty Contact</option>
+              <option>Research Collaboration</option>
+              <option>Other</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Write your message here..."></textarea>
+          </div>
+
+          <button class="btn btn-primary" style="width:100%;" onclick="alert('Message sent! We will get back to you soon.')">
+            Send Message
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Department of Computer Science — COMSATS University Islamabad</p>
+  </footer>
+</body>
+</html>

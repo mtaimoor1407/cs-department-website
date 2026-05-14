@@ -1,0 +1,35 @@
+name: CI — Production
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  lint-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install HTML linter
+        run: npm install -g htmlhint
+
+      - name: Lint HTML files
+        run: htmlhint "*.html" --config '{"doctype-first": false, "tag-pair": true, "attr-value-double-quotes": true}'
+
+      - name: Build Docker image
+        run: docker build -t cs-dept-prod:latest .
+
+      - name: Test Docker container
+        run: |
+          docker run --rm -d -p 8080:80 --name test-prod cs-dept-prod:latest
+          sleep 3
+          curl -f http://localhost:8080
+          docker stop test-prod
+          echo "✅ CI for Production passed!"
