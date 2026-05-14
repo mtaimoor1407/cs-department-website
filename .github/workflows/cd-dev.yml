@@ -1,13 +1,13 @@
-name: CD — Deploy to Production
+name: CD - Deploy to Development
 
 on:
   push:
-    branches: [ main ]
+    branches: [ develop ]
 
 jobs:
-  deploy-prod:
+  deploy-dev:
     runs-on: ubuntu-latest
-    environment: production
+    environment: development
 
     steps:
       - name: Checkout code
@@ -21,11 +21,11 @@ jobs:
       - name: Install Vercel CLI
         run: npm install -g vercel
 
-      - name: Deploy to Vercel Production
+      - name: Deploy to Vercel Development
         run: vercel --token=${{ secrets.VERCEL_TOKEN }} --yes --prod
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: Done
-        run: echo "🚀 Deployed to Production on Vercel!"
+        run: echo "Deployed to Development on Vercel"

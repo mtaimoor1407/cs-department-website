@@ -1,4 +1,4 @@
-name: CI — Production
+name: CI - Production
 
 on:
   push:
@@ -21,8 +21,7 @@ jobs:
         run: npm install -g htmlhint
 
       - name: Lint HTML files
-        run: |
-          htmlhint "*.html" --config '{"doctype-first": false, "tag-pair": true, "attr-value-double-quotes": true}'
+        run: htmlhint "*.html"
 
       - name: Build Docker image
         run: docker build -t cs-dept-prod:latest .
@@ -33,4 +32,4 @@ jobs:
           sleep 3
           curl -f http://localhost:8080
           docker stop test-prod
-          echo "✅ CI for Production passed!"
+          echo "CI for Production passed"
